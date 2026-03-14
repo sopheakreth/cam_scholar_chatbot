@@ -3,7 +3,7 @@ name = "cam-scholar-chatbot"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "rethsopheak",email = "rethsopheak@gmail.com"}
+    { name = "rethsopheak", email = "rethsopheak@gmail.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.12"
@@ -13,11 +13,12 @@ dependencies = [
     "tensorflow (>=2.21.0,<3.0.0)",
     "streamlit (>=1.55.0,<2.0.0)",
     "keras (>=3.13.2,<4.0.0)",
-    "scikit-learn (>=1.8.0,<2.0.0)"
+    "scikit-learn (>=1.8.0,<2.0.0)",
+    "pandas (>=1.4.0,<3)",
 ]
 
 [tool.poetry]
-packages = [{include = "app", from = "src"}]
+packages = [{ include = "app", from = "src" }]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
