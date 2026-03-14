@@ -1,0 +1,57 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Poetry
+# =========================
+poetry.lock
+# (Optional: keep poetry.lock if this is an api)
+# If this is an app (not a library), you SHOULD commit poetry.lock
+
+# =========================
+# Environment variables
+# =========================
+.env
+*.env
+
+# =========================
+# Streamlit
+# =========================
+.streamlit/secrets.toml
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Database
+# =========================
+*.sqlite3
+*.db
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/

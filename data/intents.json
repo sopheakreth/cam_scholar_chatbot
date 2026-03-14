@@ -1,0 +1,78 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey"
+      ],
+      "responses": [
+        "Hello! I can help you find university scholarships in Cambodia.",
+        "Hi there! I'm here to assist you in finding scholarships for universities in Cambodia.",
+        "Hey! I can help you discover scholarships for universities in Cambodia."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you"
+      ],
+      "responses": [
+        "You're welcome!"
+      ]
+    },
+    {
+      "tag": "ask_major",
+      "patterns": [
+        "subject",
+        "like to study",
+        "I want to find scholarships",
+        "I am a student",
+        "I want to study at university",
+        "I want to study a major"
+      ],
+      "responses": [
+        "What major would you like to study?",
+        "Which field of study are you interested in?"
+      ]
+    },
+    {
+      "tag": "ask_grade",
+      "patterns": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "My grade is C"
+      ],
+      "responses": [
+        "What was your Grade 12 result? (A, B, C, D, E)"
+      ]
+    },
+    {
+      "tag": "ask_location",
+      "patterns": [
+        "location",
+        "province",
+        "I am from province",
+        "I want to study in Phnom Penh"
+      ],
+      "responses": [
+        "Which city would you like to study in?",
+        "Where do you want to study?"
+      ]
+    },
+    {
+      "tag": "show_recommendation",
+      "patterns": [
+        "Show me scholarships"
+      ],
+      "responses": [
+        "Here are universities matching your input:"
+      ]
+    }
+  ]
+}
