@@ -127,17 +127,6 @@ def recommend_university():
 
     return results
 
-# def recommend_university():
-#     results = []
-#     for uni in universities:
-#         if uni["major"] == conversation_state["major"] and uni["location"] == conversation_state["location"]:
-#             results.append(uni)
-#     conversation_state["major"] = None
-#     conversation_state["grade"] = None
-#     conversation_state["location"] = None
-#     conversation_state["recommender"] = False
-#     return results
-
 
 def chatbot_response(message):
     # Step-by-step enforced

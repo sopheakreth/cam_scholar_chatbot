@@ -5,7 +5,10 @@
       "patterns": [
         "Hi",
         "Hello",
-        "Hey"
+        "Hey",
+        "Good morning",
+        "Good afternoon",
+        "Good evening"
       ],
       "responses": [
         "Hello! I can help you find university scholarships in Cambodia.",
@@ -27,6 +30,8 @@
       "tag": "ask_major",
       "patterns": [
         "subject",
+        "bachelor",
+        "degree",
         "like to study",
         "I want to find scholarships",
         "I am a student",

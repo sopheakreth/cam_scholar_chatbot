@@ -70,6 +70,8 @@ def recommend_universities(student_grade, major, province):
             "university": uni["University"],
             "location": uni["Location"],
             "scholarship": scholarship,
+            "quota": uni["Quota"],
+            "entrance_exam": uni["EntranceExam"],
             "score": round(score * 100, 2)
         })
 
