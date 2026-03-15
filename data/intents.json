@@ -8,7 +8,10 @@
         "Hey",
         "Good morning",
         "Good afternoon",
-        "Good evening"
+        "Good evening",
+        "Hey there",
+        "Hi there",
+        "Greetings"
       ],
       "responses": [
         "Hello! I can help you find university scholarships in Cambodia.",
@@ -36,7 +39,13 @@
         "I want to find scholarships",
         "I am a student",
         "I want to study at university",
-        "I want to study a major"
+        "I want to study a major",
+        "What major should I choose?",
+        "Which degree can I study?",
+        "I want to choose a field",
+        "I want to apply for a program",
+        "Looking for a major",
+        "Interested in studying"
       ],
       "responses": [
         "What major would you like to study?",

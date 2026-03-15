@@ -6,6 +6,7 @@ import os
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
 
 BASE_DIR = os.path.dirname(__file__)
 SCHOLARSHIP_PATH = os.path.join(BASE_DIR, "../../data/scholarship_training_data.csv")
@@ -124,10 +125,18 @@ def train_model():
 
     model.fit(X_train, y_train)
 
+    # Evaluate Model
+    y_pred = model.predict(X_test)
+
+    print("Predicting is completed...")
+
+    accuracy = accuracy_score(y_test, y_pred)
+
+    print(f"Among {len(y_test):d}, our ML model classified {accuracy * 100:.2f}% correctly")
+
     joblib.dump(model, "src/models/scholarship_model.pkl")
 
     print("Model trained and saved!")
-
 
 if __name__ == "__main__":
     train_model()

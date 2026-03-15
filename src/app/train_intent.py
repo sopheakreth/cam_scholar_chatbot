@@ -8,7 +8,7 @@ import tensorflow as tf
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
-
+from sklearn.model_selection import train_test_split
 import os
 
 # --- Setup ---
@@ -22,6 +22,7 @@ lemmatizer = WordNetLemmatizer()
 
 # Download NLTK resources
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 
@@ -64,24 +65,39 @@ for doc in documents:
 random.shuffle(training)
 training = np.array(training)
 
-train_x = training[:, :len(words)]
-train_y = training[:, len(words):]
+# Split features and labels
+X = training[:, :len(words)]
+Y = training[:, len(words):]
+
+# --- Split into training and testing sets ---
+x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
 # --- Build model ---
 model = Sequential()
-model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dense(128, input_shape=(len(x_train[0]),), activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(len(train_y[0]), activation='softmax'))
+model.add(Dense(len(y_train[0]), activation='softmax'))
 
 # Compile model
 sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 # --- Train model ---
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+hist = model.fit(
+    np.array(x_train),
+    np.array(y_train),
+    epochs=200,
+    batch_size=5,
+    validation_data=(x_test, y_test),
+    verbose=1
+)
+
+# --- Evaluate accuracy ---
+loss, accuracy = model.evaluate(x_test, y_test)
+print(f"Among {len(y_test):d}, Test Accuracy: {accuracy * 100:.2f}%")
 
 # Save model
-model.save(os.path.join(BASE_DIR, "../../src/models/chatbot_model.h5"), hist)
+model.save(os.path.join(BASE_DIR, "../../src/models/chatbot_model.h5"))
 print("Training complete! Model saved as chatbot_model.h5")

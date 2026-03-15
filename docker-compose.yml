@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  streamlit-app:
+    image: yourdockerhubusername/cam-scholar-chatbot:latest
+    container_name: streamlit_ai_app
+    ports:
+      - "9001:8501"
+    restart: always
