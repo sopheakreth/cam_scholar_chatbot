@@ -30,6 +30,25 @@
       ]
     },
     {
+      "tag": "leave",
+      "patterns": [
+        "Good bye",
+        "See you later",
+        "Bye",
+        "I have to go",
+        "I need to leave",
+        "Talk to you later",
+        "Catch you later",
+        "Farewell",
+        "Bye bye"
+      ],
+      "responses": [
+        "Bye! If you have any more questions about scholarships, feel free to ask.",
+        "Goodbye! If you need help finding scholarships in the future, just let me know.",
+        "See you later! If you have more questions about scholarships, don't hesitate to reach out."
+      ]
+    },
+    {
       "tag": "ask_major",
       "patterns": [
         "subject",
